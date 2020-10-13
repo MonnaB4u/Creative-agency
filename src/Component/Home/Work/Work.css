@@ -1,0 +1,17 @@
+.work{
+
+    background-color: rgb(1, 1, 41);
+    position: relative;
+    height: 420px;
+    background-position: center center;
+}
+/* .make-work{
+
+    
+    height: 320px;
+    background-position: center center;
+} */
+
+.carousel-item img{
+    height:320px
+}
