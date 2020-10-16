@@ -1,50 +1,70 @@
 import React from 'react';
+import Slider from 'react-slick';
 import work1 from '../../../images/carousel-1.png'
 import work2 from '../../../images/carousel-2.png'
 import work3 from '../../../images/carousel-3.png'
 import work4 from '../../../images/carousel-4.png'
 import './Work.css'
+
+
+
 var ReactDOM = require('react-dom');
 var Carousel = require('react-responsive-carousel').Carousel;
 
+
 const Work = () => {
+  const img = [work1,work2,work3, work4];
+
+  var settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,
+    slidesToScroll: 3,
+    initialSlide: 0,
+    responsive: [
+        {
+            breakpoint: 1024,
+            settings: {
+                slidesToShow: 3,
+                slidesToScroll: 3,
+                infinite: true,
+                dots: true
+            }
+        },
+        {
+            breakpoint: 600,
+            settings: {
+                slidesToShow: 2,
+                slidesToScroll: 2,
+                initialSlide: 2
+            }
+        }, 
+        {
+            breakpoint: 480,
+            settings: {
+                slidesToShow: 1,
+                slidesToScroll: 1
+            }
+        }
+    ]
+};
+  
     return (
 
-        <section className="work">
-            <div className="container">
-                {/* <div className="row "> */}
-                    {/* <div className="col-md-7 text-white py-5 justify-content-center " > */}
-        
-                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-    <img src="..." class="d-block w-100" alt="..."/>
+        <div className="">
+        <div className="mt-4 pt-3">
+            <h3 className="gap text-center"><strong> <span className="text-white">Here are some of</span> <span style={{ color: '#7AB259' }}>our works</span></strong></h3>
+        </div>
+      
+      <Slider className="mx-2" {...settings}>
 
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="..."/>
-    </div>
-    <div class="carousel-item">
-      <img src="..." class="d-block w-100" alt="..."/>
-    </div>
-  </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-</div>
-                 
-                 
-                   
-                    </div>
-                {/* </div>
-            </div> */}
-        </section>
-
+          {
+              img.map((each , index) => <img src={each} key={index} className="p-2 mx-2" alt=""/> )
+          }
+          
+      </Slider>
+  </div >
     );
 };
 

@@ -1,46 +1,36 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import FeedBackInfo from '../FeedBackInfo/FeedBackInfo';
-import person1 from '../../../images/customer-1.png'
-import person2 from '../../../images/customer-2.png'
-import person3 from '../../../images/customer-3.png'
 
-const blogData = [
-    {
-        img:person1,
-        name:"Nash Patrik",
-        work:"CEO,Manpol",
-        info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi maiores iste voluptatibus quae voluptatum reiciendis? Fugiat nemo doloremque, nostrum ipsam quaerat tempora, placeat ea itaque iusto delectus fuga facilis"
-
-    },
-    {
-        img:person2,
-        name:"Miriam Barron",
-        work:"CEO,Manpol",
-        info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi maiores iste voluptatibus quae voluptatum reiciendis? Fugiat nemo doloremque, nostrum ipsam quaerat tempora, placeat ea itaque iusto delectus fuga facilis"
-
-    },
-    {
-        img:person3,
-        name:"Bria Malone",
-        work:"CEO,Manpol",
-        info: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur animi maiores iste voluptatibus quae voluptatum reiciendis? Fugiat nemo doloremque, nostrum ipsam quaerat tempora, placeat ea itaque iusto delectus fuga facilis"
-
-    }
-]
 
  const FeedBack = () => {
+
+    const [data,setData] = useState([]);
+
+    useEffect(()=>{
+
+        fetch('https://nameless-sierra-23580.herokuapp.com/FindCustomer')
+        .then(res=>res.json())
+        .then(data=>setData(data))
+
+    },[])
+   
     return (
-        <section className="blogs my-5">
-        <div className="container">
-            <div className="section-header text-center">
-                 
-                 <h3>Clients <small style={{TextColor:"green"}}>FeedBack</small></h3>
+        <section classname="blogs my-5">
+        <div classname="container">
+
+        <div className="my-5">
+                <h3 className="text-center"><strong>Clients <span style={{ color: '#7AB259' }}>Feedbacks</span></strong></h3>
             </div>
+            
+            <div>
+
             <div className="card-deck mt-5">
-                 {
-                     blogData.map(blog => <FeedBackInfo blog={blog} key={blog.title}/>)
-                 }
+
+            {
+                data.map(blog => <FeedBackInfo blog={blog}> </FeedBackInfo>)
+            }
             </div>
+             </div>
         </div>
     </section>
     );

@@ -6,7 +6,8 @@ import * as firebase from "firebase/app";
 import "firebase/auth";
 import firebaseConfig from "./firebase.config";
 import { UserContext } from "../../App";
-import { useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
+import logo from '../../images/logos/logo.png';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -48,24 +49,34 @@ const Login = () => {
     }
     return (
 
-        <div className="forms">
         <div>
-         <h4>Name:{loggedInuser.name}</h4>
-            <h3>LogIn With</h3>
-         
-            <Button
-                className="Googlebtn"
-                size="lg"
-                variant="outline-primary"
-                onClick={googleSignIn}
-            >
-                <img
+        <div className="login d-flex justify-content-center">
+            <div className="row">
+                <div className="my-4">
+                    <Link to="/"><img src={logo} height="70" alt="" /></Link>
+                </div>
+            </div>
+        </div>
+
+        <div className="d-flex justify-content-center align-items-center my-5" style={{height:'300px'}}>
+            <div className="card mt-5 p-5 d-flex justify-content-center align-items-center" >
+                <div className="card-body ">
+                    <h3>Login With</h3>
+                </div>
+                <div className="buttonForm px-3 py-2 ">
+                    <button className="button " onClick={googleSignIn}>
+                    <img
                     className="loginIMG"
                     src="https://i.ibb.co/Wv3mmHY/google.png"
                     alt=""
                 />
-    Sign In with Google
-  </Button>
+                            Continue with Google
+                        </button>
+                </div>
+                <br/>
+                <p className="text-center">Don't have an account? <br/> <Link onClick={googleSignIn} to="#">Create an account</Link> </p>
+            </div>
+
         </div>
     </div>
     );

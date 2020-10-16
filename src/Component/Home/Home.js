@@ -5,17 +5,29 @@ import FeedBack from './FeedBack/FeedBack';
 import Header from './Header/Header';
 import Service from './Service/Service';
 import Work from './Work/Work';
+import './Home.css'
 
 const Home = () => {
     return (
         <div>
             <Header></Header>
-            <Brand></Brand>
+            <div className="container">
+                <Brand></Brand>
+            </div>
             <Service></Service>
-         <Work></Work>
-         <FeedBack></FeedBack>
-         <CustomerFeedBackMAin></CustomerFeedBackMAin>
-         
+
+            <div className="work">
+                <div className="container">
+                    <Work></Work>
+                </div>
+            </div>
+
+            <div className="container my-5">
+                <FeedBack></FeedBack>
+            </div>
+
+            <CustomerFeedBackMAin></CustomerFeedBackMAin>
+
         </div>
     );
 };

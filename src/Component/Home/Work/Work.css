@@ -1,17 +1,7 @@
-.work{
-
-    background-color: rgb(1, 1, 41);
-    position: relative;
-    height: 420px;
-    background-position: center center;
+.gap{
+    margin: 100px 0;
 }
-/* .make-work{
-
-    
-    height: 320px;
-    background-position: center center;
-} */
-
-.carousel-item img{
-    height:320px
-}
+.rec-carousel-item:focus {
+    outline: none;
+    box-shadow: inset 0 0 1px 0px violet;
+  }

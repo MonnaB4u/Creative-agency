@@ -1,9 +1,12 @@
 import React from 'react';
 
 const FeedBackInfo = (props) => {
+
     const {img,name,work,info} = props.blog;
+   
     return (
-        <div className="card shadow-sm">
+
+        <div className="card shadow-sm m-4 px-4">
         <div className=" card-header d-flex  align-items-center">
             <img className="mx-3" src={img} alt="" width="60" />
             

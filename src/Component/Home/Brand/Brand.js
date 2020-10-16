@@ -8,20 +8,19 @@ import './Brand.css'
 
 const Brand = () => {
     return (
-        <section className='row  d-flex justify-content-center card '>
-            <div>
-
-                <div className=" d-flex d-flex justify-content-center brand-container">
-                    <img src={slack} alt="" />
-                    <img src={google} alt="" />
-                    <img src={netflix} alt="" />
-                    <img src={airbn} alt="" />
-                    <img src={uber} alt="" />
+        <div className="my-5 text-center ">
+            <div className="card-deck text-center logo">
+                <div className="mr-2 brand-container ">
+                    <img src={slack} className="img-fluid" alt="" />
+                    <img src={google} className="img-fluid" alt="" />
+                    <img src={netflix} className="img-fluid" alt="" />
+                    <img src={airbn} className="img-fluid" alt="" />
+                    <img src={uber} className="img-fluid" alt="" />
 
                 </div>
 
             </div>
-        </section>
+        </div>
     );
 };
 
