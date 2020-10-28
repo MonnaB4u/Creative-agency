@@ -21,4 +21,6 @@ Live site Link is here: https://vigilant-swirles-da17f0.netlify.app/
 5. MongoDB
 6. Node.js
 7. Express.js
+
+# [Cv Link Is Here](https://drive.google.com/file/d/1VK2PmxXWWhh6Xb2_MyoqDPeA9qqXAqLk/view?usp=sharing)
  
