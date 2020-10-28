@@ -14,11 +14,11 @@ Live site Link is here: https://vigilant-swirles-da17f0.netlify.app/
 
 
 # Technology used:
-1 React.js
-2 Bootstrap
-3 React-router-dom
-4 Firebase Auth.
-5 MongoDB
-6 Node.js
-7 Express.js
+1. React.js
+2. Bootstrap
+3. React-router-dom
+4.  Firebase Auth.
+5. MongoDB
+6. Node.js
+7. Express.js
  
